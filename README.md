@@ -36,14 +36,45 @@
 
 ### 資材をダウンロード
 
+Google Cloud のコンソールを開き、[Cloud Shell](https://cloud.google.com/shell/docs/launching-cloud-shell?hl=ja) を起動してください。  
+Cloud Shell が起動したら、**ルートディレクトリ直下に** GitHub からリポジトリをクローンしましょう。
+
 ```sh
 git clone https://github.com/pottava/gemini-multimodal-live-demo.git
 ```
 
-### 1. テキストとオーディオの基本
+### 1. Gemini Multimodal Live API の基本
 
-まずは Vertex AI の Gemini API を使ってテキストとオーディオを扱ってみましょう。
+まずはテキストを入力にして、テキストまたはオーディオを出力とするサンプルコードを追いかけ、動かしてみましょう。
+
+1. テキスト → テキスト
+2. テキスト → 音声
 
 ```sh
-teachme 01-text-and-audio.md
+teachme gemini-multimodal-live-demo/01-text-and-audio.md
+```
+
+### 2. 音声 → 音声
+
+マイクが使えるローカル環境ならともかく、クラウド環境上 Python だけで `音声 → 音声` の生成 AI アプリは動かせません。  
+とはいえ、基本的な挙動を確認するにはコードでの確認は有意義です。一緒に読んでみましょう。
+
+```sh
+teachme gemini-multimodal-live-demo/02-audio-to-audio.md
+```
+
+### 3. 低レイヤ API を使った Web アプリの基本
+
+JavaScript を使い、ブラウザでのシンプルな `テキスト → テキスト` & `テキスト → 音声` アプリケーションを作ってみましょう。
+
+```sh
+teachme gemini-multimodal-live-demo/03-low-level-api.md
+```
+
+### 4. Vertex API 企業向け生成 AI アプリ
+
+リアルタイム音声チャットを Vertex AI 経由で実現して、Cloud Run にデプロイしてみましょう。
+
+```sh
+teachme gemini-multimodal-live-demo/04-vertex-ai.md
 ```
