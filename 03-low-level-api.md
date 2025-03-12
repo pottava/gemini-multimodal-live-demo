@@ -77,7 +77,7 @@ Web preview ボタンを押し、"ポート 8080 でプレビュー" を選ん�
 
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
 
-では続けて、ハンズオン その 3 へ進みましょう！
+では続けて、ハンズオン その 4 へ進みましょう！
 
 ```bash
 teachme 04-vertex-ai.md

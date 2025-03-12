@@ -7,7 +7,7 @@
 そして本章以降では、企業でも安心して利用できる **Vertex AI 経由での Gemini API** を使っていきます。
 
 <walkthrough-tutorial-duration duration="20"></walkthrough-tutorial-duration>
-<walkthrough-tutorial-difficulty difficulty="1"></walkthrough-tutorial-difficulty>
+<walkthrough-tutorial-difficulty difficulty="3"></walkthrough-tutorial-difficulty>
 
 **[開始]** ボタンをクリックして次のステップに進みます。
 
@@ -143,4 +143,8 @@ gcloud run services describe genai-app-0401 --region asia-northeast1 --format='v
 
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
 
-お疲れさまでした！
+では続けて、ハンズオン その 5 へ進みましょう！
+
+```bash
+teachme 05-video-and-audio.md
+```

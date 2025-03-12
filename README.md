@@ -27,7 +27,6 @@
 
 - **商用機能**
 
-  - 関数呼び出し
   - System instructions
   - クラウドへのデプロイ
   - エンタープライズ セキュリティ
@@ -54,7 +53,7 @@ git clone https://github.com/pottava/gemini-multimodal-live-demo.git
 teachme gemini-multimodal-live-demo/01-text-and-audio.md
 ```
 
-### 2. 音声 → 音声
+### 2. Python での 音声 → 音声 アプリ実装例
 
 マイクが使えるローカル環境ならともかく、クラウド環境上 Python だけで `音声 → 音声` の生成 AI アプリは動かせません。  
 とはいえ、基本的な挙動を確認するにはコードでの確認は有意義です。一緒に読んでみましょう。
@@ -77,4 +76,12 @@ teachme gemini-multimodal-live-demo/03-low-level-api.md
 
 ```sh
 teachme gemini-multimodal-live-demo/04-vertex-ai.md
+```
+
+### 5. Multimodal 生成 AI アプリ
+
+ビデオ + 音声を入力として、Gemini から音声で回答をもらうアプリケーションを実装してみます。
+
+```sh
+teachme gemini-multimodal-live-demo/05-video-and-audio.md
 ```
