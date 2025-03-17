@@ -31,10 +31,16 @@ cloudshell workspace gemini-multimodal-live-demo
 
 ## 3. テキスト → テキスト Web アプリの実行
 
-[Google AI Studio で API キーを発行](https://aistudio.google.com/app/apikey) してください。  
-ただしこれは Google Cloud の利用規約が適用されないため、テストが終わり次第キーは削除してください。
+[Google Cloud の認証情報](https://console.cloud.google.com/apis/credentials)で管理できる API キーを発行します。  
+ただし API キーは商用利用においては推奨されない方法です。ハンズオンの最後の手順にあるキーの削除は必ず実行してください。
 
-<walkthrough-editor-select-line filePath="src/03/01-text-to-text.html" startLine="37" endLine="37" startCharacterOffset="22" endCharacterOffset="36">L.38</walkthrough-editor-select-line> `<YOUR_API_KEY>` を実際の API キーと置き換え、Web サーバーを起動します。
+```bash
+gcloud services api-keys create --key-id "gemini-api" --display-name "A key for the Gemini Multimodal Live API hands-on" --api-target "service=generativelanguage.googleapis.com"
+```
+
+この応答に含まれる `keyString` が **以降のステップで利用する API キー** です。
+
+<walkthrough-editor-select-line filePath="src/03/01-text-to-text.html" startLine="37" endLine="37" startCharacterOffset="22" endCharacterOffset="36">L.38</walkthrough-editor-select-line> `<YOUR_API_KEY>` を API キーと置き換え、Web サーバーを起動します。
 
 ```bash
 python src/server.py
@@ -59,21 +65,24 @@ JavaScript を読んでみましょう。
 
 ## 5. テキスト → 音声 Web アプリの実行
 
-<walkthrough-editor-select-line filePath="src/03/02-text-to-audio.html" startLine="58" endLine="58" startCharacterOffset="22" endCharacterOffset="36">L.59</walkthrough-editor-select-line> `<YOUR_API_KEY>` を実際の API キーと置き換え、Web サーバーを起動します。
+さきほどと同様、  
+<walkthrough-editor-select-line filePath="src/03/02-text-to-audio.html" startLine="58" endLine="58" startCharacterOffset="22" endCharacterOffset="36">L.59</walkthrough-editor-select-line> `<YOUR_API_KEY>` を API キーと置き換えましょう。
 
-```bash
-python src/server.py
-```
-
-Web preview ボタンを押し、"ポート 8080 でプレビュー" を選んでみましょう。  
+もしプレビューを閉じてしまっていたら、改めて Web preview ボタンを押し、"ポート 8080 でプレビュー" を選び  
 <walkthrough-web-preview-icon/>
 
-`03` > `02-text-to-audio.html` を選択し、デモ画面を開いてみましょう。  
+`03` > `02-text-to-audio.html` を選択、デモ画面を開いてみましょう。  
 自由にコメントを入力してみてください。Gemini が音声で応えてくれます！
 
 ## その 3 はこれで終わりです
 
 もしまだサーバーが起動していたら `Ctrl + C` で停止してください。
+
+また、以下のコマンドを実行し、一時的に発行した API キーを削除しましょう。
+
+```bash
+gcloud services api-keys delete "gemini-api"
+```
 
 <walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
 
